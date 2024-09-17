@@ -4,6 +4,7 @@ let currentSceneIndex = 0; // Índice da cena atual
 
 // Função para mostrar a cena atual
 function showScene(index) {
+    console.log(`Exibindo cena ${index}`); // Log para depuração
     scenes.forEach((scene, i) => {
         // Adiciona a classe 'active' somente à cena atual
         scene.classList.toggle('active', i === index);
