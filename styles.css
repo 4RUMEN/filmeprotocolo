@@ -23,19 +23,24 @@ main {
     position: relative;
     width: 80%;
     max-width: 800px;
-    text-align: center;
+    height: 400px; /* Ajuste a altura conforme necessário */
+    overflow: hidden;
 }
 
 .scene {
-    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
+    opacity: 0;
     transition: opacity 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .scene.active {
-    display: block;
+    opacity: 1;
 }
 
 button {
@@ -46,9 +51,20 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 1rem;
+    margin: 0.5rem;
+    z-index: 10; /* Garante que os botões estejam acima das cenas */
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Adiciona um contêiner para os botões e alinha-os corretamente */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px; /* Ajuste conforme necessário */
+    position: absolute;
+    bottom: 10px; /* Posiciona os botões na parte inferior */
 }
